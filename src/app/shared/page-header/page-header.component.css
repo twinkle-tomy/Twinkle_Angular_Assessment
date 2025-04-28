@@ -1,0 +1,43 @@
+.parent{
+    background-color: #ffffff;
+    height: 6vh;
+    margin-left: 1px;
+    margin-top: 1px;
+    justify-content: center;
+    border-right: 1px solid darkgray;
+    border-left: 1px solid darkgray;
+    border-bottom: 1px solid darkgray;
+    border-radius: 5px;
+  }
+  .dashboard {
+    font-size: 19px;
+    font-weight: 600;
+    margin-left: 10px;
+  }
+  .dashboard-type {
+    padding-top: 8px;
+  }
+  .user-dropdown {
+    display: flex;
+    align-items: center;
+    z-index: 1;
+    position: relative; /* or absolute/fixed if needed */
+
+  }
+  
+  .user-button {
+    display: flex;
+    align-items: center;
+    gap: 1px;
+    height: 25px;
+  }
+  
+  mat-icon {
+    font-size: 24px;
+  }
+  
+  
+  
+  
+  
+  

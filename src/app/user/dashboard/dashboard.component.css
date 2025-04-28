@@ -1,0 +1,43 @@
+.parentdiv{
+    height: 100vh;
+    overflow-x: hidden;
+    justify-content: center;
+    background-color: #b1bbe6;
+
+}
+.main{
+padding: 0px; 
+margin-left: -23px;
+}
+.subdiv{
+justify-content: center;
+border-radius: 10px;
+}
+
+.styled-table {
+    border-radius: 10px; /* Border radius */
+    width: 80%;
+    border-collapse: collapse; /* Removes double borders */
+    background-color: whitesmoke;
+
+  }
+
+  .styled-table th {
+    background-color: gray; /* Header background color */
+    color: white; /* Header text color */
+    padding: 5px;
+    text-align: center; 
+    font-size: 14px;
+  }
+  
+  .styled-table td {
+    border: 1px solid #3498db; /* Cell border color */
+    padding: 8px;
+    font-size: 12px;
+  }
+  
+  .styled-table tr:nth-child(even) {
+    background-color: lightgray; /* Stripe effect for even rows */
+  }
+  
+  

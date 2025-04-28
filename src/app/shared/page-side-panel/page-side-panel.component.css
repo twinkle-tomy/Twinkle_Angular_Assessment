@@ -1,0 +1,98 @@
+.imageStyle {
+    width: 100%;
+    justify-content: center;
+    margin-left: -5px;
+}
+
+.sidenav {
+    padding-left: 0px;
+    padding-right: 0px;
+    border-right: 1px solid darkgray;
+    border-top: 1px solid darkgray;
+    border-bottom: 1px solid darkgray;
+     height: 100%;
+     width: 14%;
+     position: fixed;
+     z-index: 1;
+     top: 0;
+     left: 0;
+     background-color: #b1bbe6;
+     overflow-x: hidden;
+     padding-top: 20px;
+   }
+   .sidenav a {
+     padding: 10px 5px 4px 11px;
+     text-decoration: none;
+     font-size: 13px;
+     font-family: 'Poppins';
+     color: #000000;
+     margin-top:8px;
+     display: block;
+   } 
+   .routerActiveNavClass{
+     background-color:#7d89f1!important;
+     color: #000000 !important;
+   }
+   .icon-sidebar{
+     margin-right: 7px;
+     vertical-align: middle
+   }
+   .icon-sidebarr{
+    margin-right: 7px;
+    vertical-align: middle;
+    width: 23px;
+    height: 23px          ;
+  }
+   @media screen and (max-width: 700px) {
+     .sidenav {
+       width: 100%;
+       height: auto;
+       position: relative;
+     }
+     .sidenav a {float: left;}
+     div.content {margin-left: 0;}
+   }
+   
+   @media screen and (max-width: 400px) {
+     .sidenav a {
+       text-align: center;
+       float: none;
+     }
+   }
+   @media screen and (max-width: 700px) {
+     .sidenav {
+       width: 100%;
+       height: auto;
+       position: relative;
+     }
+     .sidenav a {
+       text-align: center;
+       float: none;
+     }
+     div.content {margin-left: 0;}
+   }
+   @media screen and (max-width: 1100px) {
+     .sidenav {
+       width: 100%;
+       height: auto;
+       position: relative;
+     }
+     .sidenav a {
+       text-align: center;
+       float: none;
+     }
+     div.content {margin-left: 0;}
+   }
+   .logo{
+     font-weight: bold;
+   }
+   .dashboardiv{
+     background-color: #03BC94 ;
+     color: #000000 ;
+   }
+   
+   
+ 
+   
+ 
+ 

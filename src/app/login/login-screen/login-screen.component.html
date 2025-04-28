@@ -1,0 +1,24 @@
+<div class="container maindiv">
+    <div class="row maindivRow">
+        <img class="imageStyle" src="../../../assets/baker_login_logo.png" alt="">
+        <form [formGroup]="loginForm" class="formGroupiv" (ngSubmit)="login()">
+            <div class="form-group">
+                <label>User Name</label>
+                <input class="form-control formGroupInput" type="text" formControlName="username" placeholder="Enter Username">
+                <div *ngIf="loginForm.get('username')?.touched && loginForm.get('username')?.invalid" class="text-danger">
+                      Please enter a valid Username</div>
+            </div>
+            <br>
+            <div class="form-group">
+                <label>Password</label>
+                <input class="form-control formGroupInput" type="password" placeholder="Enter Password" formControlName="password">
+                <div *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.invalid"
+                    class="text-danger">Please enter a valid Password</div>
+            </div>
+            <br>
+            <div class="input-field">
+                <button type="submit" class="loginbttn">Login</button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,77 @@
+ 
+  
+.maindiv {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    background-color: #b1bbe6;
+}
+
+.maindivRow {
+    margin-top: 8%;
+    height: 60vh;
+    background-color: #e0dcdc; /* Replace with your desired color */
+    border-radius: 10px;
+}
+  
+
+.formGroupiv {
+    margin-left: 100px;
+    margin-bottom: 100%;
+    width: 50%;
+    justify-content: center;
+}
+
+.formGroupInput {
+    border-color: steelblue;
+    border-radius: 3px;
+}
+
+input::placeholder {
+    color: lightgray; /* Change the color */
+    font-size: 12px; /* Change the font size */
+ }
+
+.imageStyle {
+    display: flex;
+    height: 60px;
+    width: 200px;
+    justify-content: center;
+    margin-left: 25%;
+}
+
+.titleheader {
+    font-size: 21px;
+    color: #fff
+
+}
+label
+{
+    font-size: 14px;
+    color: steelblue;
+    font-weight: 600;
+}
+
+.form-group input {
+    font-size: 14px;
+}
+
+.formcheckinline {
+    justify-content: space-between;
+}
+
+.text-danger {
+    font-size: 13px;
+}
+.loginbttn {
+    border-radius: 5px;
+    justify-content: center;
+    line-height: 38px;
+    width: 100%;
+    background-color: steelblue;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+    border-color: transparent;
+}
+

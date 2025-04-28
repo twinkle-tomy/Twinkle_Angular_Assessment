@@ -1,0 +1,32 @@
+<div class="parentdiv">
+    <div class="row">
+        <div class="col-md-2">
+            <app-page-side-panel></app-page-side-panel>
+        </div>
+        <div class="col-md-10 main">
+            <app-page-header [headerName]="title" class="header" ></app-page-header>
+            <br>
+            <div class="row subdiv">
+                <table border="1" class="styled-table">
+                    <thead>
+                      <tr>
+                        <th >Category</th>
+                        <th >Item</th>
+                        <th>Details</th>
+                        <th>Price</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let item of data">
+                        <td>{{ item.category }}</td>
+                        <td>{{ item.item }}</td>
+                        <td>{{ item.details }}</td>
+                        <td>{{ item.price }}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  
+        </div>
+    </div>
+</div>
+
