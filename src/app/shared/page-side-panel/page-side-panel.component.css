@@ -5,34 +5,24 @@
 }
 
 .sidenav {
-    padding-left: 0px;
-    padding-right: 0px;
-    border-right: 1px solid darkgray;
-    border-top: 1px solid darkgray;
-    border-bottom: 1px solid darkgray;
-     height: 100%;
-     width: 14%;
-     position: fixed;
-     z-index: 1;
-     top: 0;
-     left: 0;
-     background-color: #b1bbe6;
-     overflow-x: hidden;
-     padding-top: 20px;
+    margin-left: 3px;
    }
-   .sidenav a {
-     padding: 10px 5px 4px 11px;
-     text-decoration: none;
-     font-size: 13px;
-     font-family: 'Poppins';
-     color: #000000;
-     margin-top:8px;
-     display: block;
-   } 
-   .routerActiveNavClass{
-     background-color:#7d89f1!important;
-     color: #000000 !important;
-   }
+
+   .navButton {
+  border: 0px solid transparent;
+  border-radius: 50%;
+  background-color: transparent;
+  cursor: pointer;
+  min-width: 30px;
+  margin-left: 5px;
+  margin-top: 10px;
+}
+
+.navButton.selected {
+  background-color: #C6F7E2; 
+  border: 1px solid #C6F7E2;
+}
+
    .icon-sidebar{
      margin-right: 7px;
      vertical-align: middle

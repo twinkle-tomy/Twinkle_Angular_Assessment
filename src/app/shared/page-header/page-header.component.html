@@ -1,21 +1,36 @@
-<div
-class="row parent d-flex flex-items-row "
->
-<div class="dash-main col-md-8 col-sm-7 col-xs-7 d-flex justify-content-between contents">
-  <div class="dashboard pl-2">{{headerName}}</div>
+<div class="row parent d-flex flex-items-row ">
+<div class="dash-main col-md-8 col-sm-7 col-xs-7 d-flex ">
+  <button mat-button [matMenuTriggerFor]="ModuleMenu" class="horizontalBars" mat-button matTooltip="Home">
+    <div class="bar"></div>
+    <div class="middlebar"></div>
+    <div class="bar"></div>
+  </button>
+  <img class="imageLogoDashboardStyle" src="../../../assets/Logo-Dashboard.png" alt="">
+  <div class="verticalBar"></div>
+  <div class="dashboard">{{headerName}}</div>
 </div>
 
 <div class="contents col-md-4 col-sm-5 col-xs-5 d-flex justify-content-end">
     <div class="user-dropdown">
+      <button class="my-custom-button">My Request</button>
+      <button class="my-custom-button">Support Ticket</button>
+      <button class="my-custom-button">
+        <mat-icon class="whiteMatIcon">comment</mat-icon>
+      </button>
+      <button class="my-custom-button">
+        <mat-icon class="whiteMatIcon">notifications</mat-icon>
+      </button>   
+
         <!-- User Icon and Text -->
-        <button mat-button [matMenuTriggerFor]="menu" class="user-button">
-          <mat-icon>person</mat-icon> <!-- User Icon -->
-          <span>Admin</span>          <!-- Label -->
-          <mat-icon>arrow_drop_down</mat-icon> <!-- Dropdown Icon -->
+        <button mat-button [matMenuTriggerFor]="ProfileMenu" class="user-button">
+          <div>
+            <mat-icon class="personMatIcon">person</mat-icon> <!-- User Icon -->
+            <div class="personMatIconDiv"></div>
+          </div>
         </button>
       
-        <!-- Dropdown Menu -->
-        <mat-menu #menu="matMenu">
+        <!-- Dropdown Menu 1-->
+        <mat-menu #ProfileMenu="matMenu">
           <button mat-menu-item>
             <mat-icon>account_circle</mat-icon> <!-- Profile Icon -->
             <span>Profile</span>
@@ -24,14 +39,44 @@ class="row parent d-flex flex-items-row "
             <mat-icon>settings</mat-icon> <!-- Settings Icon -->
             <span>Settings</span>
           </button>
-          <button mat-menu-item (click)="signOut()">
+          <button mat-menu-item (click)="LogOut()">
             <mat-icon>exit_to_app</mat-icon> <!-- Logout Icon -->
             <span>Logout</span>
-          </button>
-      
+          </button>      
         </mat-menu>
-      </div>
-      
+
+         <!-- Dropdown Menu 2 -->
+         <mat-menu #ModuleMenu="matMenu">
+          <button mat-menu-item (click)="NavigateModule('otr')">
+            <img class="moduleIconStyle" src="../../../assets/otr_icon.png" alt="">
+            <span class="moduleTextStyle">OTR</span>
+          </button>
+          <br>
+          <br>
+          <button mat-menu-item (click)="NavigateModule('npd')">
+            <img class="moduleIconStyle" src="../../../assets/npi_icon.png" alt="">
+            <span class="moduleTextStyle">NPD</span>
+          </button>
+          <br>
+          <br>
+          <button mat-menu-item (click)="NavigateModule('ito')">
+            <img class="moduleIconStyle" src="../../../assets/tps_icon.png" alt="">
+            <span class="moduleTextStyle">ITO</span>
+          </button>
+          <br>
+          <br>
+          <button mat-menu-item (click)="NavigateModule('digital')">
+            <img class="moduleIconStyle" src="../../../assets/services_icon.png" alt="">
+            <span class="moduleTextStyle">DIGITAL</span>
+          </button>
+          <br>
+          <br>
+          <button mat-menu-item (click)="NavigateModule('brush')">
+            <img class="moduleIconStyle" src="../../../assets/ecr_icon.png" alt="">
+            <span class="moduleTextStyle">BRUSH</span>
+          </button>
+        </mat-menu>
+      </div>      
 </div>
 </div>
 

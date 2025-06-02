@@ -1,0 +1,6 @@
+    <h4 mat-dialog-title style="text-align: center; margin-top: 3px;">{{ data.title }}</h4>
+    <mat-dialog-content>{{ data.message }}</mat-dialog-content>
+    <mat-dialog-actions align="end">
+      <button mat-button (click)="dialogRef.close(false)">No</button>
+      <button mat-button color="primary" (click)="dialogRef.close(true)">Yes</button>
+    </mat-dialog-actions>

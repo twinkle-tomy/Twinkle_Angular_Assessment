@@ -1,11 +1,11 @@
 import { Routes } from '@angular/router';
 import { LoginScreenComponent } from './login/login-screen/login-screen.component';
-import { DashboardComponent } from './user/dashboard/dashboard.component';
-import { FileManagerComponent } from './user/file-manager/file-manager.component';
-import { LetterBoxComponent } from './user/letter-box/letter-box.component';
-import { TasksComponent } from './user/tasks/tasks.component';
-import { FaqComponent } from './user/faq/faq.component';
 import { authentifyGuard } from './guard/authentify.guard';
+import { OtrComponent } from './home/otr/otr.component';
+import { NpdComponent } from './home/npd/npd.component';
+import { ITOComponent } from './home/ito/ito.component';
+import { DigitalComponent } from './home/digital/digital.component';
+import { BrushComponent } from './home/brush/brush.component';
 
 export const routes: Routes = [
     {
@@ -18,33 +18,33 @@ export const routes: Routes = [
         component:LoginScreenComponent
     },
     {
-        path:'dashboard',
-        component:DashboardComponent,
-        title :'Dashboard',
+        path:'otr',
+        component:OtrComponent,
+        title :'OTR',
         canActivate : [authentifyGuard]
     },
     {
-        path:'fileManager',
-        component:FileManagerComponent,
-        title :'File Manager',
+        path:'npd',
+        component:NpdComponent,
+        title :'NPD',
         canActivate : [authentifyGuard]
     },
     {
-        path:'letterBox',
-        component:LetterBoxComponent,
-        title :'Letter Box',
+        path:'ito',
+        component:ITOComponent,
+        title :'ITO',
         canActivate : [authentifyGuard]
     },
     {
-        path:'tasks',
-        component:TasksComponent,
-        title :'Tasks',
+        path:'digital',
+        component:DigitalComponent,
+        title :'DIGITAL',
         canActivate : [authentifyGuard]
     },
     {
-        path:'faq',
-        component:FaqComponent,
-        title :'FAQ',
+        path:'brush',
+        component:BrushComponent,
+        title :'BRUSH',
         canActivate : [authentifyGuard]
     }
 ];

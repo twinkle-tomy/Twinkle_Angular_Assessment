@@ -1,0 +1,46 @@
+<div  *ngIf="isVisible" class="collapsible-panel mainDiv">
+    <div class="headerRow">
+        <h6 style="padding: 10px;"> Filter Contracts</h6>        
+        <button class="navButton" (click)="toggleComponent()">
+          <mat-icon>arrow_back</mat-icon>
+        </button>
+    </div>
+
+    <div class="toggleRow">
+      <!-- Toggle buttons -->
+      <div class="custom-toggle-group">
+        <button class="custom-toggle" *ngFor="let option of toggleOptions"
+          [class.selected]="selectedFilter === option.value" (click)="selectFilter(option.value)">
+          {{ option.label }}
+        </button>
+      </div>
+    
+      <div class="search-container">
+        <input type="text" [(ngModel)]="searchText" (input)="applyFilter()" placeholder="Search Contracts..." />
+        <mat-icon class="search-icon">search</mat-icon>
+      </div>
+      <button class="advanceSearch-button">>&nbsp;&nbsp;&nbsp;Advanced Search</button>
+    </div>
+
+<div class="listForm">
+<mat-list *ngIf="(filteredProducts?.length ?? 0) > 0; else loading">
+  <mat-list-item *ngFor="let item of filteredProducts">
+    <mat-checkbox class="custom-checkbox" [(ngModel)]="item.checked" (change)="onCheckboxChange(item)">
+      <span class="truncate-text" matTooltip="{{ item.description }}" matTooltipPosition="above">
+              {{ item.description }}
+            </span>
+          </mat-checkbox>
+          <!-- Star Favorite Icon -->
+          <mat-icon class="star-icon" [class.favorited]="item.favorited" (click)="toggleFavorite(item)">
+            {{ item.favorited ? 'star' : 'star_border' }}
+          </mat-icon>
+        </mat-list-item>
+      </mat-list>
+    
+      <ng-template #loading>
+        <div class="empty-placeholder">
+          No Data Found!!!
+        </div>
+      </ng-template>
+</div>
+</div>

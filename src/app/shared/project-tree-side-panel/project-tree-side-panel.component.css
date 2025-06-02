@@ -1,0 +1,177 @@
+.mainDiv
+{
+    margin-left: 3px;
+}
+.headerRow
+{
+  display: flex;
+    margin-top: 1px;
+    width: 280px;
+    height: 50px;
+    border-left: 1px solid lightgray;
+    border-right: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;  
+      display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+   .navButton {
+  border: 0px solid transparent;
+  border-radius: 0px;
+  background-color: transparent;
+  cursor: pointer;
+  min-width: 20px;
+  margin-left: 5px;
+}
+
+.toggleRow
+{
+    width: 280px;  
+    overflow-y: auto;
+    border-left: 1px solid lightgray;
+    border-right: 1px solid lightgray;
+}
+
+.listForm
+{
+    width: 280px;
+    height: 578px;   
+    overflow-y: auto;
+    border-left: 1px solid lightgray;
+    border-right: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;   
+}
+
+mat-list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.custom-toggle-group {
+  display: flex;
+  gap: 5px;
+  margin: 8px;
+  background-color: whitesmoke;
+  margin-top: 10px;
+  border: 1px solid lightgray;
+  border-radius: 2px;
+  height: 35px;
+  width: 260px;
+}
+
+.custom-toggle {
+  padding: 10px 10px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 10px;
+  min-width: 30px;
+  color: gray;
+}
+
+.custom-toggle.selected {
+  background-color: white; /* light blue */
+  border-color: lightgray;
+  color: black;
+}
+
+.custom-toggle:hover {
+  background-color: #f0f8ff;
+}
+
+.star-icon {
+  padding-top: 7px;
+  margin-left: 10px;
+  cursor: pointer;
+  color: gray;
+  font-size: 19px;
+  transition: color 0.3s;
+  user-select: none;
+}
+
+.star-icon.favorited {
+  color: #048367
+}
+
+.star-icon:hover {
+  color: #048367; 
+}
+
+.truncate-text {
+  font-size: 12px;
+  display: inline-block;
+  max-width: 150px;   /* Adjust to your layout */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.custom-checkbox.mat-mdc-checkbox {
+  --mdc-checkbox-selected-checkmark-color: white;       
+  --mdc-checkbox-selected-focus-icon-color: #02A783;
+  --mdc-checkbox-selected-hover-icon-color: #02A783;
+  --mdc-checkbox-selected-icon-color: #02A783;
+  --mdc-checkbox-selected-pressed-icon-color: #02A783;
+}
+.empty-placeholder {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #888;
+  font-style: italic;
+}
+
+.search-container {
+  position: relative;
+  max-width: 250px;
+  margin-left: 10px;
+  margin-top: 20px;
+
+  input {
+    width: 100%;
+    padding: 4px 32px 4px 10px; /* space for icon on right */
+    border-radius: 24px;
+    border: 1px solid #ccc;
+    font-size: 12px;
+    outline: none;
+    transition: border-color 0.3s ease;
+    height: 25px;
+  }
+
+  input:focus {
+    border-color: #02A783;
+  }
+
+  .search-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px; 
+  height: 16px;     
+  width: 16px;      
+  color: #888;
+  pointer-events: none;
+  }
+
+}
+
+  .advanceSearch-button
+  {
+    background-color: #02A783;
+    border: 1px solid #02A783;
+    border-radius: 5px;
+    height: 30px;
+    width: 250px;
+    margin-left: 10px;
+    color: white;
+    font-size: 11px;
+    margin-left: 10px;
+    margin-top: 20px;
+  }

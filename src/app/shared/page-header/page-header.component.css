@@ -1,22 +1,51 @@
 .parent{
-    background-color: #ffffff;
-    height: 6vh;
-    margin-left: 1px;
-    margin-top: 1px;
+    height: 10vh;
     justify-content: center;
-    border-right: 1px solid darkgray;
-    border-left: 1px solid darkgray;
-    border-bottom: 1px solid darkgray;
-    border-radius: 5px;
+    background-color: #05322B;
   }
   .dashboard {
-    font-size: 19px;
-    font-weight: 600;
+    font-size: 12px;
+    font-weight: 400;
     margin-left: 10px;
+    margin-top: 14px;
+    color: lightgray;
+    
   }
-  .dashboard-type {
-    padding-top: 8px;
+  .horizontalBars {
+    cursor: pointer;
+    margin-left: 5px;
+    margin-top: 5px;
   }
+
+  .bar {
+    width: 12px; /* Adjust as needed */
+    height: 1px; /* Adjust as needed */
+    background-color: white; /* Adjust color as needed */
+    margin: 6px 0; /* Adjust as needed */
+    transition: 0.4s;
+  }
+
+  .middlebar {
+    width: 18px; /* Adjust as needed */
+    height: 1px; /* Adjust as needed */
+    background-color: white; /* Adjust color as needed */
+    margin: 6px 0; /* Adjust as needed */
+    transition: 0.4s;
+  }
+
+  .verticalBar {
+    margin-top: 15px;
+    margin-left: 10px;
+    border-left: 1px solid white; /* Adjust color and thickness as needed */
+    height: 17px; /* Set the desired height of the line */
+    display: inline-block; /* or block, depending on layout */
+  }
+
+  .imageLogoDashboardStyle {
+    width: min-content;
+    height: min-content;
+    margin-top: 6px;
+}
   .user-dropdown {
     display: flex;
     align-items: center;
@@ -24,6 +53,43 @@
     position: relative; /* or absolute/fixed if needed */
 
   }
+
+  .my-custom-button {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    font-size: 12px;
+    font-weight: 400;
+    background-color: transparent;
+    color:lightgray;
+    border: 0px;
+  }
+
+  .whiteMatIcon {
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 1px;
+    height: 25px;
+    margin-top: 2px;
+}
+
+.personMatIcon {
+  color: white;
+  visibility: collapse;
+}
+
+.personMatIconDiv {
+  align-items: center;
+  position: absolute;
+  margin-top: 2px;
+  margin-left: 0px;
+  top: 0;
+  width: 80%;
+  height: 80%;
+  background: url('../../../assets/customers_bluewhite.png') no-repeat center center;
+  background-size: contain;
+}
   
   .user-button {
     display: flex;
@@ -33,8 +99,18 @@
   }
   
   mat-icon {
-    font-size: 24px;
+    font-size: 15px;
   }
+
+  .moduleIconStyle {
+    width: 50px;
+    height: 50px;
+    margin-top: 6px;
+}
+
+.moduleTextStyle {
+  margin-left: 15px;
+}
   
   
   

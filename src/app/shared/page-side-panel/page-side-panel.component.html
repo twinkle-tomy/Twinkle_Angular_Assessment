@@ -1,28 +1,33 @@
 
 <div class="sidenav">
-    <div class="logo-nest">
-       <div class="pl-2 d-flex flex-direction-row">
-        <img class="imageStyle" src="../../../assets/baker_login_logo.png" alt="">
-       </div>
-    </div>
     <ul  class="navbar-nav">
-      <li class="nav-item   ">
-        <a  [routerLink]="['/dashboard']"  routerLinkActive="routerActiveNavClass" [routerLinkActiveOptions]="{exact:true}"   ><img class="icon-sidebar" src = "../../../assets/menu.svg" /> Dashboard</a>
+      <li class="nav-item">
+        <button class="navButton" mat-button matTooltip="Show/Hide Contracts"
+         [class.selected]="selectedButton == 1" (click)="selectButton(1)">
+          <img class="icon-sidebar" src="../../../assets/menu.svg" />
+        </button>
       </li>
-
-      <li class="nav-item ">
-        <a [routerLink]="['/fileManager']"  routerLinkActive="routerActiveNavClass" [routerLinkActiveOptions]="{exact:true}"  ><img class="icon-sidebar" src = "../../../assets/Group 2456.svg" />File Manager </a>
+      <br>
+      <li class="nav-item">
+        <button class="navButton" [class.selected]="selectedButton == 2"
+         (click)="selectButton(2)">
+          <img class="icon-sidebar" style="height: 22px;width: 22px;" src="../../../assets/reviewicon.png" />
+        </button>
       </li>
-      <li class="nav-item ">
-        <a [routerLink]="['/letterBox']"  routerLinkActive="routerActiveNavClass" [routerLinkActiveOptions]="{exact:true}"   >	<img class="icon-sidebar" src = "../../../assets/booking.svg" />Letter Box</a>
+      <br>
+      <li class="nav-item" mat-button matTooltip="Control Panel">
+        <button class="navButton" [class.selected]="selectedButton == 3" (click)="selectButton(3)">
+          <img class="icon-sidebar" style="height: 22px;width: 22px;" src="../../../assets/ic_settings_black.png" />
+        </button>
       </li>
-
-      <li class="nav-item ">
-          <a [routerLink]="['/tasks']"  routerLinkActive="routerActiveNavClass" [routerLinkActiveOptions]="{exact:true}" >	<img class="icon-sidebar" src = "../../../assets/wallet.svg" />Tasks</a>
-        </li>
-        <li class="nav-item ">
-          <a [routerLink]="['/faq']"  routerLinkActive="routerActiveNavClass" [routerLinkActiveOptions]="{exact:true}" >	<img class="icon-sidebarr" src = "../../../assets/reviewicon.png" />FAQ</a>
-        </li>
+      <br>
+      <li class="nav-item" mat-button matTooltip="Sign Out">
+        <button class="navButton"
+         [class.selected]="selectedButton == 4" (click)="selectButton(4)">
+          <img class="icon-sidebar" style="height: 22px;width: 22px;" src="../../../assets/ic_exit_black.png" />
+        </button>
+      </li>
+      
     </ul>
 </div> 
 

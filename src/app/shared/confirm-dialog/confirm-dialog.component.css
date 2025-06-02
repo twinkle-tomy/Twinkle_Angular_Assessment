@@ -1,0 +1,31 @@
+h4.mat-dialog-title {
+  color: darkblue;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+mat-dialog-content {
+  font-style: italic;
+  color: #555;
+  padding: 16px 24px;
+}
+
+mat-dialog-actions {
+  justify-content: flex-end;
+  padding: 8px 24px;
+}
+
+button {
+  min-width: 64px;
+  border-radius: 8px;
+  margin-left: 10px;
+}
+
+button[color="primary"] {
+  background-color: #1976d2;
+  color: white;
+}
+
+button[color="primary"]:hover {
+  background-color: #115293;
+}

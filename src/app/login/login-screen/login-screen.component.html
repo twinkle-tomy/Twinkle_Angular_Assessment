@@ -1,16 +1,16 @@
 <div class="container maindiv">
     <div class="row maindivRow">
-        <img class="imageStyle" src="../../../assets/baker_login_logo.png" alt="">
+        <img class="imageStyle" src="../../../assets/Logo.png" alt="">
+        <h6 class="titleheader">Sign in</h6>
         <form [formGroup]="loginForm" class="formGroupiv" (ngSubmit)="login()">
             <div class="form-group">
-                <label>User Name</label>
-                <input class="form-control formGroupInput" type="text" formControlName="username" placeholder="Enter Username">
+                <label class="required-field">SSO ID</label>
+                <input class="form-control formGroupInput" type="text" formControlName="username" placeholder="Enter SSO ID">
                 <div *ngIf="loginForm.get('username')?.touched && loginForm.get('username')?.invalid" class="text-danger">
-                      Please enter a valid Username</div>
+                      Please enter a valid SSO ID</div>
             </div>
-            <br>
             <div class="form-group">
-                <label>Password</label>
+                <label class="required-field">Password</label>
                 <input class="form-control formGroupInput" type="password" placeholder="Enter Password" formControlName="password">
                 <div *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.invalid"
                     class="text-danger">Please enter a valid Password</div>
