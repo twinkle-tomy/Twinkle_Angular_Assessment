@@ -14,7 +14,229 @@
 
   <!-- Row 2: Tabs -->
   <div class="row-custom">
-    <mat-tab-group>
+<kendo-tabstrip style="width: 70%;">
+  <kendo-tabstrip-tab title="ISPO" [selected]="true">
+    <ng-template kendoTabContent>
+      <br>
+      <div class="truncate-text" [matTooltip]="selectedText">
+        {{ selectedText }}
+      </div>
+      <br>
+      <div class="seperartorDiv">
+        <mat-accordion>
+          <mat-expansion-panel [(expanded)]="isExpanded" class="horizontal-expander">
+            <mat-expansion-panel-header class="expander-header">
+              <span class="header-title">Filter Activities</span>
+              <button class="clearTextBtn">Clear Filter</button>
+            </mat-expansion-panel-header>
+
+            <div class="expanderChild">
+              <div class="dropdown-row">
+                <div class="dropdownItem-row">
+                  <label class="dropdownLabel">View As</label>
+                  <select class="dropdown">
+                    <option value="Individual">Individual</option>
+                    <option value="Project">Project</option>
+                    <option value="Office">Office</option>
+                  </select>
+                </div>
+
+                <div class="dropdownItem-row">
+                  <label class="dropdownLabel">Functions</label>
+                  <select class="dropdown">
+                    <option value="ENG">ENG</option>
+                    <option value="TECH">TECH</option>
+                  </select>
+                </div>
+
+                <div class="dropdownItem-row">
+                  <label class="dropdownLabel">Document Type</label>
+                  <select class="dropdown">
+                    <option value="Internal">Internal</option>
+                    <option value="Step">Step</option>
+                  </select>
+                </div>
+
+                <div class="dropdownItem-row">
+                  <label class="dropdownLabel">Activity Status</label>
+                  <select class="dropdown">
+                    <option value="Not Completed">Not Completed</option>
+                    <option value="Completed">Completed</option>
+                  </select>
+                </div>
+                <div class="dropdownItem-row">
+                  <label class="dropdownLabel">Activity Type</label>
+                  <select class="dropdown">
+                    <option value="560">560</option>
+                    <option value="510">510</option>
+                  </select>
+                </div>
+
+                <div class="dropdownItem-row">
+                  <label class="dropdownLabel">Finish By</label>
+                  <select class="dropdown">
+                    <option value="Late Finish">Late Finish</option>
+                    <option value="Early Finish">Early Finish</option>
+                  </select>
+                </div>
+
+                <div class="dropdownItem-row">
+                  <label class="dropdownLabel">Date Type</label>
+                  <select class="dropdown">
+                    <option value="Business">Business</option>
+                    <option value="Non-Business">Non-Business</option>
+                  </select>
+                </div>
+              </div>
+              <div class="expanderBtnDiv">
+                <mat-button-toggle [checked]="isTotalDocumentsChecked"
+                  (change)="toggleCheckBoxButtons('totalDocuments')" aria-label="checkbox-button">
+                  Total Documents (1321)
+                </mat-button-toggle>
+                <div class="verticalBar1"></div>
+                <mat-button-toggle [checked]="isBackLogChecked" (change)="toggleCheckBoxButtons('backlogs')"
+                  aria-label="checkbox-button">
+                  Backlogs (16)
+                </mat-button-toggle>
+                <div class="verticalBar1"></div>
+                <mat-button-toggle [checked]="isForecastChecked" (change)="toggleCheckBoxButtons('forecast')"
+                  aria-label="checkbox-button">
+                  Forecast (199)
+                </mat-button-toggle>
+                <div class="verticalBar1"></div>
+                <mat-button-toggle [checked]="isNotAckChecked" (change)="toggleCheckBoxButtons('notAck')"
+                  aria-label="checkbox-button">
+                  Not Acknowledged (3)
+                </mat-button-toggle>
+                <div class="verticalBar1"></div>
+                <mat-button-toggle [checked]="isStepChecked" (change)="toggleCheckBoxButtons('step')"
+                  aria-label="checkbox-button">
+                  Step (5)
+                </mat-button-toggle>
+                <div class="verticalBar1"></div>
+                <mat-button-toggle [checked]="isRuleStreamChecked" (change)="toggleCheckBoxButtons('ruleStream')"
+                  aria-label="checkbox-button">
+                  Rulestream (3)
+                </mat-button-toggle>
+              </div>
+              <div class="expanderBtnDiv" style="display: flex;">
+                <button class="navButton" (click)="scroll(-1)">
+                  <mat-icon>chevron_left</mat-icon>
+                </button>
+
+                <div class="toggle-scroll-wrapper" #scrollWrapper style="margin-top: 5px;">
+                  <mat-button-toggle-group name="options" [(ngModel)]="selectedFisicalWeek" class="custom-toggle-group"
+                    appearance="legacy" style="background-color: transparent; width: 100%;">
+                    <mat-button-toggle class="fwButtonStyle" *ngFor="let item of FiscialWeeks" [value]="item.label"
+                      [ngClass]="getFiscialWeek(item.count)">
+                      {{ item.label }}
+                    </mat-button-toggle>
+                  </mat-button-toggle-group>
+                </div>
+
+                <button class="navButton" (click)="scroll(1)">
+                  <mat-icon>chevron_right</mat-icon>
+                </button>
+              </div>
+            </div>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </div>
+      <div class="seperartorDiv" style="border: 1px solid lightgray;margin-top: 5px; border-radius: 3px;">
+        <div class="container" style="height: 40px;display: flex;align-items: center;">
+          <div style="flex: 1;text-align: left;">
+            <span style="font-weight: bold;">Activities</span>
+            <span style="margin-left: 10px;">Result : {{ tabCount }} Activities</span>
+          </div>
+
+          <span style="flex: 1;text-align: center;"></span>
+          <div style="flex: 1;text-align: right; ">
+            <div class="search-settings-container">
+              <div class="search-box">
+                <input type="text"  [(ngModel)]="searchText"
+                (input)="onSearch()" placeholder="Search in all columns" />
+                <span>
+                  <mat-icon class="search-icon">search</mat-icon>
+                </span>
+              </div>
+
+              <button mat-icon-button style="border: none;background: transparent;margin-top: 5px;">
+                <mat-icon class="settings-button">settings</mat-icon>
+              </button>
+            </div>
+          </div>
+
+        </div>
+        <div class="table-scroll-container">
+          <kendo-grid [data]="filteredData" [height]="500">
+            <kendo-grid-column field="id" title="ID" [width]="80">
+              <ng-template kendoGridHeaderTemplate>
+                ID <span class="kebab-icon" style="margin-left: 20px;">&#8942;</span>
+              </ng-template>
+            </kendo-grid-column>
+            <kendo-grid-column field="title">
+              <ng-template kendoGridHeaderTemplate>
+                Title <span class="kebab-icon" style="margin-left: 110px;">&#8942;</span>
+              </ng-template>
+            </kendo-grid-column>
+            <kendo-grid-column field="price" format="{0:c}">
+              <ng-template kendoGridHeaderTemplate>
+                Price <span class="kebab-icon" style="margin-left: 110px;">&#8942;</span>
+              </ng-template>
+            </kendo-grid-column>
+            <kendo-grid-column field="category">
+              <ng-template kendoGridHeaderTemplate>
+                Category <span class="kebab-icon" style="margin-left: 80px;">&#8942;</span>
+              </ng-template>
+            </kendo-grid-column>
+            <kendo-grid-column field="brand">
+              <ng-template kendoGridHeaderTemplate>
+                Brand <span class="kebab-icon" style="margin-left: 110px;">&#8942;</span>
+              </ng-template>
+            </kendo-grid-column>
+          </kendo-grid>
+        </div>
+      </div>
+    </ng-template>
+
+  </kendo-tabstrip-tab>
+
+  <kendo-tabstrip-tab title="VDR">
+    <ng-template kendoTabContent>
+      <p>Some other content here</p>
+    </ng-template>
+  </kendo-tabstrip-tab>
+
+  <kendo-tabstrip-tab title="VDR">
+    <ng-template kendoTabContent>
+      <p>This is the VDR tab content.</p>
+    </ng-template>
+  </kendo-tabstrip-tab>
+
+  <kendo-tabstrip-tab title="VDR Finalisation">
+    <ng-template kendoTabContent>
+      <p>This is the VDR Finalisation tab content.</p>
+    </ng-template>
+  </kendo-tabstrip-tab>
+
+  <kendo-tabstrip-tab title="OTD Trends">
+    <ng-template kendoTabContent>
+      <p>This is the OTD Trends tab content.</p>
+    </ng-template>
+  </kendo-tabstrip-tab>
+  <kendo-tabstrip-tab title="Engineering Productivity">
+    <ng-template kendoTabContent>
+      <p>This is the Engineering Productivity tab content.</p>
+    </ng-template>
+  </kendo-tabstrip-tab>
+  <kendo-tabstrip-tab title="Technical Alignment">
+    <ng-template kendoTabContent>
+      <p>This is the Technical Alignment tab content.</p>
+    </ng-template>
+  </kendo-tabstrip-tab>
+</kendo-tabstrip>
+
+    <!-- <mat-tab-group>
       <mat-tab label="ISPO">
         <br>
         <div class="truncate-text" [matTooltip]="selectedText">
@@ -166,23 +388,12 @@
 
           </div>
           <div class="table-scroll-container">
-            <table class="custom-table">
-              <thead>
-                <tr>
-                  <th *ngFor="let col of tabColumns">
-                    <div class="th-content">
-                      <span>{{ col }}</span>
-                      <span class="dots">⋯</span>
-                    </div>
-                  </th>
-                </tr>
-              </thead>
-              <tbody style="height:300px;">
-                <tr *ngFor="let row of tabRows">
-                  <td *ngFor="let col of tabColumns">{{ row[col] }}</td>
-                </tr>
-              </tbody>
-            </table>
+<kendo-grid [data]="gridData" [height]="400">
+  <kendo-grid-column field="id" title="ID" ></kendo-grid-column>
+  <kendo-grid-column field="name" title="Name"></kendo-grid-column>
+  <kendo-grid-column field="email" title="Email"></kendo-grid-column>
+</kendo-grid>
+
           </div>
         </div>
       </mat-tab>
@@ -203,6 +414,6 @@
        <mat-tab label="Technical Alignment">
         <p>This is the Technical Alignment tab content.</p>
       </mat-tab>
-    </mat-tab-group>
+    </mat-tab-group> -->
   </div>
 </div>

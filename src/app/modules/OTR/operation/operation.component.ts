@@ -7,13 +7,16 @@ import { MatAccordion, MatExpansionPanel, MatExpansionPanelHeader } from '@angul
 import { MatButtonToggle, MatButtonToggleGroup } from '@angular/material/button-toggle';
 import { MatIcon } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
+import { GridModule } from '@progress/kendo-angular-grid';
+import { TabStripModule } from '@progress/kendo-angular-layout';
 
 @Component({
   selector: 'app-operation',
   imports: [
     MatTabGroup, MatTab,CommonModule, MatTooltip,
      MatAccordion, MatExpansionPanel, MatExpansionPanelHeader,
-    MatButtonToggle, MatIcon, MatButtonToggleGroup,FormsModule],
+    MatButtonToggle, MatIcon, MatButtonToggleGroup,FormsModule,GridModule,
+  TabStripModule],
   templateUrl: './operation.component.html',
   styleUrl: './operation.component.css'
 })
@@ -42,6 +45,8 @@ export class OperationComponent {
   tabColumns: string[] = [];
   tabRows: any[] = [];
   tabCount : number = 0;
+    searchText: string = '';
+      filteredData: any[] = [];
 
   constructor(private contractService : ContractServiceService)
   {
@@ -54,6 +59,7 @@ export class OperationComponent {
 
     this.contractService.getContracts().subscribe(data => {
       this.tabRows = data.products;
+      this.filteredData = [...this.tabRows];
       if (this.tabRows.length) {
         this.tabColumns = Object.keys(this.tabRows[0]);
         this.tabCount = this.tabRows.length;
@@ -102,6 +108,16 @@ export class OperationComponent {
   scroll(direction: number): void {
     const wrapper = this.scrollWrapper.nativeElement;
     wrapper.scrollLeft += direction * 100;
+  }
+
+    onSearch(): void {
+    const text = this.searchText.toLowerCase();
+
+    this.filteredData = this.tabRows.filter(row =>
+      Object.values(row).some(value =>
+        String(value).toLowerCase().includes(text)
+      )
+    );
   }
 
 }

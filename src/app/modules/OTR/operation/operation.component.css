@@ -35,18 +35,6 @@
   overflow: hidden;
 }
 
-mat-tab-group {
-  flex: 1;
-  display: flex;
-  width: 70%;
-  font-size: 12px;
-}
-
-mat-tab-body {
-  flex: 1;
-  overflow: auto;
-}
-
   .verticalBar {
     margin-left: 5px;
     margin-right: 5px;
@@ -208,7 +196,7 @@ mat-tab-body {
   margin: 4px;
   border: 1px solid lightgray;
   border-radius: 12px !important; /* Rounded corners */
-  min-width: 170px;
+  min-width: 155px;
   min-height: 45px;
   text-align: center;
   white-space: nowrap;
@@ -232,7 +220,6 @@ mat-tab-body {
 }
 
 .table-scroll-container {
-  max-height: 300px; /* You can adjust the height as needed */
   overflow-x: auto;
   overflow-y: auto;
   margin-top: 5px;
@@ -309,5 +296,30 @@ mat-tab-body {
   height: 16px;
   width: 16px;
   font-size: 16px;
+}
+
+::ng-deep kendo-grid .k-grid-header th.k-header {
+  background-color: #d3d3d3; /* Gray background for headers */
+  border: 1px solid lightsteelblue;
+  font-weight: bold;
+  color: black;
+}
+
+::ng-deep kendo-grid .k-grid-table tr,
+::ng-deep kendo-grid .k-grid-table td {
+  border: 1px solid lightsteelblue !important;
+  background-color: #f5f5f5; /* Light gray background */
+}
+
+::ng-deep kendo-grid .k-grid-content tr:hover {
+  background-color: #f0f8ff; /* Optional: highlight row on hover */
+}
+
+::ng-deep .kebab-icon {
+  float: right;
+  font-size: 16px;
+  cursor: pointer;
+  padding-left: 8px;
+  color: #555;
 }
 
